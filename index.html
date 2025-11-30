@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Randhir's Café - Menu</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f7f3e9; }
+    h1 { margin: 0; }
+
+    header {
+      background:url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0');
+      background-size: cover;
+      background-position: center;
+      padding: 60px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .container { padding: 20px; }
+    .hidden { display: none; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 130px;
+      object-fit: cover;
+    }
+
+    .item-card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .item-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #4a2c2a;
+      font-size: 18px;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4a2c2a;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 style="font-family: 'Georgia', serif; font-size:48px; text-shadow:2px 2px 6px black;">Randhir's Café</h1>
+  <p style="font-size:18px; text-shadow:1px 1px 4px black;">Warm • Rustic • Freshly Brewed</p>
+</header>
+
+<!-- HOME PAGE -->
+<div class="container" id="homePage">
+  <h2>Select a Menu</h2>
+
+  <div class="menu-grid">
+    <div class="card" onclick="openMenu('coffeePage')">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+      <h3>Coffee</h3>
+    </div>
+
+    <div class="card" onclick="openMenu('snacksPage')">
+      <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1">
+      <h3>Snacks</h3>
+    </div>
+
+    <div class="card" onclick="openMenu('dessertPage')">
+      <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af">
+      <h3>Desserts</h3>
+    </div>
+
+    <div class="card" onclick="openMenu('bruschettaPage')">
+      <img src="images/Bruchetta.jpg">
+      <h3>Bruschetta</h3>
+    </div>
+  </div>
+</div>
+
+<!-- COFFEE PAGE -->
+<div class="container hidden" id="coffeePage">
+  <h2>☕ Coffee Menu</h2>
+
+  <div class="item-card"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"><div>Hot Coffee</div><div class="price">₹40</div></div>
+  <div class="item-card"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348"><div>Cold Coffee</div><div class="price">₹100</div></div>
+  <div class="item-card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"><div>Espresso</div><div class="price">₹120</div></div>
+  <div class="item-card"><img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13"><div>Latte</div><div class="price">₹125</div></div>
+  <div class="item-card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"><div>Tea</div><div class="price">₹25</div></div>
+
+  <a class="back-btn" onclick="goBack()">⬅ Back</a>
+</div>
+
+<!-- SNACKS PAGE -->
+<div class="container hidden" id="snacksPage">
+  <h2>🍔 Snacks Menu</h2>
+
+  <div class="item-card"><img src="images/Sabudana.jpg"><div>Sabudana</div><div class="price">₹60</div></div>
+  <div class="item-card"><img src="images/Poha.webp"><div>Poha</div><div class="price">₹50</div></div>
+  <div class="item-card"><img src="images/Vada.jpg"><div>Idli Vada Sambar</div><div class="price">₹80</div></div>
+  <div class="item-card"><img src="images/Samosa.jpg"><div>Samosa</div><div class="price">₹40</div></div>
+
+  <a class="back-btn" onclick="goBack()">⬅ Back</a>
+</div>
+
+<!-- DESSERT PAGE -->
+<div class="container hidden" id="dessertPage">
+  <h2>🍰 Desserts Menu</h2>
+
+  <div class="item-card"><img src="images/Mawa.jfif"><div>Mawa Cake</div><div class="price">₹80</div></div>
+  <div class="item-card"><img src="images/Pastry.jpg"><div>Pastry</div><div class="price">₹60</div></div>
+  <div class="item-card"><img src="images/Pan Cake.jpg"><div>Pan Cake</div><div class="price">₹120</div></div>
+
+  <a class="back-btn" onclick="goBack()">⬅ Back</a>
+</div>
+
+<!-- BRUSCHETTA PAGE -->
+<div class="container hidden" id="bruschettaPage">
+  <h2>🍞 Bruschetta Menu</h2>
+
+  <div class="item-card"><img src="images/Italian.jfif"><div>Italian Bruschetta</div><div class="price">₹150</div></div>
+  <div class="item-card"><img src="images/Classic.webp"><div>Classic Bruschetta</div><div class="price">₹185</div></div>
+
+  <a class="back-btn" onclick="goBack()">⬅ Back</a>
+</div>
+
+<script>
+  function openMenu(menuId) {
+    document.getElementById('homePage').classList.add('hidden');
+    document.getElementById(menuId).classList.remove('hidden');
+  }
+
+  function goBack() {
+    document.querySelectorAll('.container').forEach(section => section.classList.add('hidden'));
+    document.getElementById('homePage').classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>
+
